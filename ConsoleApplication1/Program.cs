@@ -25,7 +25,7 @@ namespace ConsoleApplication1
             //Run();
             for (int i = 1; i < 20; i++)
             {
-                Console.WriteLine(Fibonacci(i));
+                Console.WriteLine("{0}" ,Fibonacci(i));
             }
 
             //Console.Write("Enter number : ");

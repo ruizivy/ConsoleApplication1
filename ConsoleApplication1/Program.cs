@@ -77,7 +77,11 @@ namespace ConsoleApplication1
         //        }
         //    }
            // triangletree(8);
-            Run();
+            //Run();
+            for(int i =1; i < 20; i++)
+            {
+               Console.WriteLine(Fibonacci(i));
+            }
         }
         public static void triangletree(int tri_size)
         {

@@ -23,10 +23,13 @@ namespace ConsoleApplication1
             //}
             // triangletree(8);
             //Run();
-            for (int i = 1; i < 20; i++)
-            {
-                Console.WriteLine("{0}" ,Fibonacci(i));
-            }
+            //Console.Write("Enter a number :");
+            //int number = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 1; i < number; i++)
+            //{
+            //    Console.WriteLine("{0} " ,Fibonacci(i));
+            //}
+            Array1();
 
             //Console.Write("Enter number : ");
             //int number = Convert.ToInt32(Console.ReadLine());
@@ -125,24 +128,23 @@ namespace ConsoleApplication1
         }
         public static void Array1()
         {
-            int[] jumble = { 5, 3, 1, 7, 9 };
-            int counter = 0;
-            int[] sorted = {};
-
-            for (int i = 0; i < jumble.Length; i++)
+            int[] Array = { 11, 33, 5, -3, 19, 8, 49 };
+            int temp;
+            for (int i = 0; i < Array.Length - 1; i++)
             {
-                if (counter <= jumble[i])
+                for (int j = i + 1; j < Array.Length; j++)
                 {
-                    counter = jumble[i];
-                    //sorted[i];
-                   //sorted[i];
-                   // if (sorted.Length == jumble.Length)
-                   // {
-                   //     Console.WriteLine(sorted[i]);
-                   // }
+                    if (Array[i] > Array[j])
+                    {
+                        temp = Array[i];
+                        Array[i] = Array[j];
+                        Array[j] = temp;
+                    }
                 }
             }
-          
+            //Console.Write("Sorted:");
+            foreach (int sort in Array)
+                Console.Write("{0} ", sort);
         }
         public static int Fibonacci(int n)
         {

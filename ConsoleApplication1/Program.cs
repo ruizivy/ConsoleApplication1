@@ -21,19 +21,24 @@ namespace ConsoleApplication1
             //    }
             //    Console.WriteLine("");
             //}
-
+            // triangletree(8);
+            //Run();
+            for (int i = 1; i < 20; i++)
+            {
+                Console.WriteLine(Fibonacci(i));
+            }
 
             //Console.Write("Enter number : ");
             //int number = Convert.ToInt32(Console.ReadLine());
             //Console.Write("Enter number for increment : ");
             //int num2 = Convert.ToInt32(Console.ReadLine());
 
-            //for (int i = 1; i < number; i+=num2)
+            //for (int i = 1; i < number; i += num2)
             //{
-            //        Console.WriteLine(i);
-            //}    
-            
-           // Triangle();
+            //    Console.WriteLine(i);
+            //}
+
+            //Triangle();
 
             //Random r = new Random();
             //for (int i = 0; i < arr.Length; i++)
@@ -47,41 +52,36 @@ namespace ConsoleApplication1
             //        Console.WriteLine(arr[i]);
             //    }
             //}
-        //    for (int x = 1; x < 8; x++)
-        //    {
-        //        if(x > 5)
-        //        break;
-        //        Console.WriteLine(x);
-        //    }
-        //}
-        //public static int[] arr = new int[20];
-        //public static bool IsExist(int num)
-        //{
-        //    for (int i = 0; i < arr.Length; i++)
-        //    {
-        //        if (arr[i] == num)
-        //            return true;
-        //    }
-        //    return false;
-        //}
-        //public static void Triangle()
-        //{
-        //    Console.Write("Enter triangle size : ");
-        //    int max = Convert.ToInt32(Console.ReadLine());
-
-        //    for (int i = 0; i < max; i++)
-        //    {
-        //        for (int j = 0; j < i; j++)
-        //        {
-        //            Console.WriteLine("*");
-        //        }
-        //    }
-           // triangletree(8);
-            //Run();
-            for(int i =1; i < 20; i++)
+            //for (int x = 1; x < 8; x++)
+            //{
+            //    if (x > 5)
+            //        break;
+            //    Console.WriteLine(x);
+            //}
+        }
+        public static int[] arr = new int[20];
+        public static bool IsExist(int num)
+        {
+            for (int i = 0; i < arr.Length; i++)
             {
-               Console.WriteLine(Fibonacci(i));
+                if (arr[i] == num)
+                    return true;
             }
+            return false;
+        }
+        public static void Triangle()
+        {
+            Console.Write("Enter triangle size : ");
+            int max = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.WriteLine("*");
+                }
+            }
+           
         }
         public static void triangletree(int tri_size)
         {
@@ -135,14 +135,26 @@ namespace ConsoleApplication1
                 {
                     counter = jumble[i];
                     //sorted[i];
-                   sorted[i];
-                    if (sorted.Length == jumble.Length)
-                    {
-                        Console.WriteLine(sorted[i]);
-                    }
+                   //sorted[i];
+                   // if (sorted.Length == jumble.Length)
+                   // {
+                   //     Console.WriteLine(sorted[i]);
+                   // }
                 }
             }
-           
+          
+        }
+        public static int Fibonacci(int n)
+        {
+            int a = 1;
+            int b = 2;
+            for (int i = 1; i < n; i++)
+            {
+                int num = a;
+                a = b;
+                b = num + a;
+            }
+            return a;
         }
     }
 }

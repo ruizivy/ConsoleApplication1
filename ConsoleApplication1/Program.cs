@@ -23,13 +23,14 @@ namespace ConsoleApplication1
             //}
             // triangletree(8);
             //Run();
-            //Console.Write("Enter a number :");
-            //int number = Convert.ToInt32(Console.ReadLine());
-            //for (int i = 1; i < number; i++)
-            //{
-            //    Console.WriteLine("{0} " ,Fibonacci(i));
-            //}
-            Array1();
+            Console.Write("Enter a number :");
+            int number = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i < number; i++)
+            {
+                Console.WriteLine("{0}", Fibonacci(i));
+            }
+       
+            //Array1();
 
             //Console.Write("Enter number : ");
             //int number = Convert.ToInt32(Console.ReadLine());
@@ -61,7 +62,15 @@ namespace ConsoleApplication1
             //        break;
             //    Console.WriteLine(x);
             //}
+
+           
+            Console.WriteLine("Enter a number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            TwoSum(n);
+            //Array1();
+           
         }
+
         public static int[] arr = new int[20];
         public static bool IsExist(int num)
         {
@@ -148,15 +157,41 @@ namespace ConsoleApplication1
         }
         public static int Fibonacci(int n)
         {
+                        //return a;
             int a = 1;
-            int b = 2;
-            for (int i = 1; i < n; i++)
+                int b = 2;
+                for (int i = 1; i < n; i++)
+                {
+                    int num = a;
+                    a = b;
+                    b = num + a;
+                }
+                return a;
+        }
+        public static void TwoSum(int num)
+        {
+            int[] a = new int[] { 1, 5, 8, 9, 3, 0 };
+            for (int i = 0; i < a.Length; i++)
             {
-                int num = a;
-                a = b;
-                b = num + a;
+                for (int j = i + 1; j < a.Length; j++)
+                {
+                    if (a[i] + a[j] == num)
+                    {
+                        Console.WriteLine(a[i] + " " + a[j]);
+                    }
+                }
             }
-            return a;
+            //return a[n];
+        }
+        public static int Count(int[] a)
+        {
+            int count =0;
+            for (int i = 0; i < a.Length; i++)
+                for (int j = i + 1; j < a.Length; j++)
+                    for (int k = j + 1; k < a.Length; k++)
+                        if (a[i] + a[j] + a[k] == 0)
+                            count++;
+            return count;
         }
     }
 }
